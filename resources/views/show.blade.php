@@ -7,35 +7,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
         .profile-header {
-            background: linear-gradient(135deg, #0066cc 0%, #003d7a 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .profile-photo {
             width: 150px;
             height: 150px;
             object-fit: cover;
             border: 5px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .info-card {
-            border-left: 4px solid #0066cc;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
         }
         .tab-content {
             padding: 2rem 0;
-        }
-        .nav-tabs .nav-link {
-            color: #666;
-        }
-        .nav-tabs .nav-link.active {
-            color: #0066cc;
-            font-weight: 600;
         }
     </style>
 </head>

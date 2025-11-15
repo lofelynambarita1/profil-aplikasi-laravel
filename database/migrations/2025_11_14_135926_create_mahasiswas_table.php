@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
@@ -17,21 +14,20 @@ return new class extends Migration
             $table->string('username', 100)->unique()->comment('Username untuk login');
             $table->string('email_akademik', 150)->unique()->comment('Email akademik mahasiswa');
             $table->string('nama_lengkap', 200)->comment('Nama lengkap mahasiswa');
-            $table->string('program_studi', 100)->comment('Program studi (contoh: S1 Informatika)');
+            $table->string('program_studi', 100)->comment('Program studi');
             $table->string('kelas', 50)->comment('Kelas mahasiswa');
             $table->string('wali_mahasiswa', 200)->nullable()->comment('Nama dosen wali');
-            $table->string('jalur_usm', 50)->nullable()->comment('Jalur masuk (USM 1, USM 2, dll)');
-            $table->date('tanggal_masuk')->comment('Tanggal mulai kuliah');
+            $table->string('jalur_usm', 50)->nullable()->comment('Jalur masuk');
+            $table->date('tanggal_masuk')->comment('Tanggal masuk/inagurasi');
             $table->year('angkatan')->comment('Tahun angkatan');
-            $table->enum('status', ['Aktif', 'Tidak Aktif', 'Lulus', 'Cuti'])->default('Aktif')->comment('Status mahasiswa');
+            $table->enum('status', ['Aktif', 'Tidak Aktif', 'Lulus', 'Cuti', 'DO', 'Mengundurkan Diri'])
+                  ->default('Aktif')
+                  ->comment('Status mahasiswa');
             $table->string('foto', 255)->nullable()->comment('Path file foto mahasiswa');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('mahasiswas');
